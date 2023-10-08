@@ -1,0 +1,92 @@
+Section 1: Identify the network protocol involved in the incident:
+The network protocols involved in the incident are:
+
+
+DNS (Domain Name System):
+
+The browser initiates a DNS resolution for yummyrecipesforme.com, and the DNS server replies with the correct IP address.
+The browser later requests another DNS resolution for greatrecipesforme.com, and the DNS server responds with the new IP address.
+
+
+HTTP (Hypertext Transfer Protocol):
+
+The browser initiates an HTTP request for the webpage from yummyrecipesforme.com.
+The browser later initiates an HTTP request to the new IP address associated with greatrecipesforme.com.
+
+
+Section 2: Document the incident:
+
+Disgruntled baker executes a brute force attack to gain access to the web host.
+Default password for the administrative account is guessed, granting access to the admin panel.
+The attacker changes the website’s source code, embedding a JavaScript function.
+The JavaScript prompts visitors to download and run a file upon visiting the website.
+After running the downloaded file, customers are redirected to a fake version of the website (greatrecipesforme.com), where recipes are offered for free.
+
+
+Customer Impact:
+
+Customers report being prompted to download a file to update their browsers.
+After running the file, the website address changes, and their computers experience decreased performance.
+
+
+Technical Details:
+
+Brute force attack on the web server due to the default password on the admin account.
+JavaScript code added to the website's source code prompts visitors to download an executable file.
+The downloaded file contains a script that redirects browsers from yummyrecipesforme.com to greatrecipesforme.com.
+
+
+Analysis:
+
+-Network Protocol Analysis:
+
+DNS resolutions were used to map domain names to IP addresses.
+HTTP was utilized for web page requests and downloading the malicious executable.
+
+
+Source Code Analysis:
+
+JavaScript code injected into the website prompted the download of a malicious executable.
+
+
+File Analysis:
+
+The downloaded file contained a script redirecting users to a fake website.
+
+
+Root Cause:
+Weaknesses in security:
+Default password on the admin account.
+Lack of controls to prevent a brute force attack.
+
+
+Section 3: Recommend one remediation for brute force attacks:
+To prevent future brute force attacks, the following remediation is recommended:
+
+Remediation:
+Implement Account Lockout Policies and Strong Password Policies:
+
+Account Lockout Policies:
+
+Implement account lockout mechanisms after a certain number of failed login attempts (e.g., three to five).
+Temporary lockouts can deter brute force attacks by slowing down the attacker's progress.
+
+
+Strong Password Policies:
+
+Enforce the use of strong, complex passwords for all user accounts, especially administrative accounts.
+Regularly prompt users to update their passwords.
+Avoid default passwords and ensure that administrators choose unique, hard-to-guess passwords.
+
+
+Two-Factor Authentication (2FA):
+
+Enable 2FA for administrative accounts to add an extra layer of security.
+Even if passwords are compromised, an additional authentication step provides an extra barrier.
+
+
+Monitoring and Alerts:
+
+Set up monitoring for multiple failed login attempts.
+Configure alerts to notify administrators of suspicious activity, allowing for a swift response.
+Implementing these measures will significantly enhance the security posture of the website and mitigate the risk of successful brute force attacks in the future. Regular security audits and updates should also be conducted to address emerging threats.
